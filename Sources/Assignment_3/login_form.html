@@ -1,0 +1,33 @@
+<!doctype HTML>
+<html data-ng-app>
+
+<head>
+    <link rel=stylesheet href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div  ng-controller="LoginController">
+
+        <div class="login">Hello <p ng-bind="user.firstName"></p></div>
+        <br/>
+
+        <div class="input">
+            Username:
+            <input type="text" ng-model="user.firstName"></input>
+            <br/>
+            <br/> Password:
+            <input ng-model="user.pwd" type="password"></input>
+            <br/>
+            <br/>
+            <input type="submit" ng-click="login(user.firstName, user.pwd)" value="Login"></input>
+            <br/>
+            <br/>
+        </div>
+        <div ng-repeat="login in logins">{{ login }}</div>
+    </div>
+
+</body>
+
+</html>

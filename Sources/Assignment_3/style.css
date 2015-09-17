@@ -1,0 +1,233 @@
+.login_title {
+    width: 100%;
+    height: 20%;
+    font-size: 30px;
+    font-style: bold;
+    color: dodgerblue;
+    font-family: sans-serif;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 4px solid dodgerblue;
+    border-radius: 10px;
+}
+
+.login_main {
+    top: 50px;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    display: inline-block;
+    border-left: 4px solid dodgerblue;
+    border-right: 4px solid dodgerblue;
+    border-radius: 10px;
+}
+
+.login_bottom {
+    bottom: 0px;
+    align: center;
+    text-align: center;
+    position: fixed;
+}
+
+.login_main button {
+    position: relative;
+    top: 50px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    height: 150px;
+    width: 150px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.login_main button:hover {
+    color: dodgerblue;
+    background-color: white;
+    cursor: pointer;
+}
+
+.login_main img {
+    height: 150px;
+    width: 150px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.login_button {
+    left: 15px;
+}
+
+.register_button {}
+
+.strectch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+
+.registration {}
+
+.reg_head {
+    height: 10%;
+    padding-bottom: 15px;
+    border-bottom: 4px solid dodgerblue;
+    border-radius: 10px;
+    vertical-align: text-bottom;
+    position: relative;
+}
+
+.reg_head h1 {
+    position: absolute;
+    font-size: 30px;
+    font-style: bold;
+    color: dodgerblue;
+    font-family: sans-serif;
+    bottom: 0;
+}
+
+
+/* login_form */
+
+.login,
+.input {
+    max-width: 800px;
+    color: #555;
+    font-size: 18px;
+    margin: auto;
+    padding: 10px;
+}
+
+
+/*Weather */
+
+.weatherModule {
+    background: #f2f2f2;
+    height: 150px;
+    width: 250px;
+    border: 1px dashed #ccc;
+    padding: 1em;
+}
+
+.currentConditions {
+    float: left;
+}
+
+.weatherModule {
+    padding: 1em;
+}
+
+.currentIcon {
+    float: left;
+    margin: 0 .75em;
+}
+
+#btn {
+    z-index: 2;
+}
+
+
+/*home */
+
+.inLeft{
+    position: relative;
+    left: 75px;
+}
+.inRight{
+    position: relative;
+    left: 700px;
+}
+
+.home_top{
+    width: 100%;
+    border-bottom: dodgerblue solid 4px;
+    border-radius: 10px;
+    color: dodgerblue;
+    text-align: center;
+    font-family: sans-serif;
+}
+.home_main {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    border-right: dodgerblue solid 4px;
+    border-left: dodgerblue solid 4px;
+    border-radius: 10px;
+    
+}
+.home_start {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    float: left;
+}
+
+#map-canvas {
+    width: 450px;
+    height: 400px;
+    position: relative;
+    float: left;
+    
+}
+.home_destination{
+    
+    position: relative;
+    width: 350px;
+    height: 450px;
+    float: left;
+
+}
+.home_start p, .home_destination p{
+    position: relative;
+    text-align: center;
+    color: dodgerblue;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.home_bottom {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+#map-canvas{
+    z-index: 3;
+}
+
+.getDir {
+    position: relative;
+    left: 485px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    height: 150px;
+    width: 150px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.getDir:hover {
+    color: dodgerblue;
+    background-color: white;
+    cursor: pointer;
+}
+
+.inLeft{
+    position: relative;
+    left: 91px;
+    z-index: 2;
+}
+
+.inRight{
+    position: relative;
+    left: 91px;
+    z-index: 2;
+}

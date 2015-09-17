@@ -1,0 +1,133 @@
+<html lang="" data-ng-app="GoogleDirection">
+
+<head>
+    <title>Home</title>
+    <meta t="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+    <script scr="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+    <script scr="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="weather.js"></script>
+
+</head>
+
+<body onload=">
+
+
+    <div class="home_top">
+        <h1>Home</h1>
+    </div>
+    <br>
+    <br>
+
+
+    <div class="home_main" ng-controller="googlemapoutput">
+        <div class="home_start">
+            <p>Start</p>
+            <br>
+            <input class="inLeft" type="text" ng-model="startlocation" id="startlocation" />
+        </div>
+        <div id="map-canvas" style="height: 400px;" ng-controller="googlemapoutput"></div>
+        <div class="home_destination">
+            <p>Destination</p>
+            <br>
+            <input class="inRight" type="text" ng-model="endlocation" id="endlocation" />
+        </div>
+    </div>
+    <br>
+    <div class="home_bottom" ng-controller="googlemapoutput">
+        <button id="btn" class="getDir" ng-click="calcRoute()">
+            Get Directions
+        </button>
+    </div>
+    <div id="condition">&nbsp; test</div>
+    
+    
+   <!-- <div ng-app="weather" ng-controller="weatherctrl">
+        <button id="btn" ng-click="getWeather()"> Show Weather </button>
+        <br/>
+        <br/>
+        <div class="weatherModule">
+            <p class="currentConditions" ng-bind-html-unsafe="currentweather.html"></p>
+            <div class="currentIcon" ng-bind-html-unsafe="currentIcon.html"></div>
+        </div>
+    </div>-->
+
+</body>
+
+</html>
+
+
+<script>
+    angular.module('GoogleDirection', [])
+        .controller('googlemapoutput', function ($scope) {
+
+            var map;
+            var mapOptions;
+            var directionsDisplay = new google.maps.DirectionsRenderer({
+                draggable: true
+            });
+            var directionsService = new google.maps.DirectionsService();
+
+            $scope.initialize = function () {
+                var pos = new google.maps.LatLng(0, 0);
+                var mapOptions = {
+                    zoom: 3,
+                    center: pos
+                };
+
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+            };
+            $scope.calcRoute = function () {
+                var end = document.getElementById('endlocation').value;
+                var start = document.getElementById('startlocation').value;
+
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setMap(map);
+                        directionsDisplay.setDirections(response);
+                        console.log(status);
+                    }
+
+                });
+            };
+
+            google.maps.event.addDomListener(window, 'load', $scope.initialize);
+
+        });
+
+    angular.module('weather', [])
+        .controller('weatherctrl', function ($scope, $http) {
+
+            $scope.getWeather = function () {
+                $http.get('http://api.wunderground.com/api/36b799dc821d5836/conditions/q/MO/Kansas%20City.json').success(function (data) {
+                    console.log(data);
+                    temp = data.current_observation.temp_f;
+                    icon = data.current_observation.icon_url;
+                    weather = data.current_observation.weather;
+                    console.log(temp);
+                    $scope.currentweather = {
+                        html: "Currently " + temp + " &deg; F and " + weather + ""
+                    }
+                    $scope.currentIcon = {
+                        html: "<img src='" + icon + "'/>"
+                    }
+
+                })
+            }
+
+        });
+</script>
