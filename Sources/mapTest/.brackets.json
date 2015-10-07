@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/Brandon/Documents/ionicProjects/mapTest/gulpfile.js",
+        "C:/Users/Brandon/Documents/ionicProjects/mapTest/plugins/com.ionic.keyboard/www/keyboard.js",
+        "C:/Users/Brandon/Documents/ionicProjects/mapTest/www/lib/ionic/js/ionic.min.js"
+    ]
+}
