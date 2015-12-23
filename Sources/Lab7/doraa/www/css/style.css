@@ -1,0 +1,110 @@
+/* Empty. Add your own CSS if you like */
+
+#map {
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+}
+
+.scroll {
+    ;
+}
+#overflowControl {
+    overflow: scroll;
+}
+#weatherStart {
+    border: solid green 6px;
+    border-radius: 20px;
+    background-color: lightgreen;
+}
+
+#weatherEnd {
+    border: solid red 6px;
+    border-radius: 20px;
+    background-color: lightcoral;
+}
+
+#weatherIncrements {
+    border: solid royalblue 6px;
+    border-radius: 20px;
+    background-color: lightblue;
+    overflow-y: scroll;
+    font-family: Georgia;
+    color: #333;
+    height: 273px;
+}
+
+#weatherRows{
+    border: solid royalblue 3px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: Georgia;
+    text-align: center;
+    color: #333;
+    margin-top: 7px;
+}
+
+#elNino{
+    align-content: center;
+    border: solid royalblue 6px;
+    padding: 3px;
+    border-radius: 20px;
+    position: relative;
+    height: 245px;
+    width: 100%;
+}
+
+.errorText
+{
+color:orangered;    
+}
+.hide{
+display:none;
+}
+
+.passwordLabel
+{
+    display:none!important;
+}
+
+.travelWeather{
+    padding-top: 8px;
+    padding-left: 10px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 18px;
+    border-bottom: solid black 2px;
+    font-family: Georgia;
+    
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+#aboutpage img, #loginImg
+{
+     background-image: url("../img/WeatherTrails.png") no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 1;
+}
+
+/*
+#loginImg {
+    
+    background-image: url("../img/WeatherTrails.png") no-repeat;
+
+    background-size: cover;
+}
+*/

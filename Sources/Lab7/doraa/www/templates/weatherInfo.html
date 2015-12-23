@@ -1,0 +1,57 @@
+<ion-view view-title="WeatherInfo" ng-controller="weatherCtrl">
+    <ion-header-bar class="bar-calm">
+        <h1 class="title">Weather Trails</h1>
+ <button class="button button-icon" ng-click="logOut()">Logout
+              <i class="icon ion-log-out"></i>
+            </button> 
+       <button class="button button-icon" ng-click="rememberUser()">Remember me
+              <i class="icon ion-checkmark-round"></i>
+            </button>
+
+    </ion-header-bar>
+    <ion-content id="overflowControl">
+
+        <form class="list" ng-controller="weatherCtrl" ng-init="init()">
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input" name="txt_Source">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input id="txt_SourcePlace" type="search" placeholder="Source" ng-model="txt_SourcePlace">
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-input" name="txt_Destination">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input id="txt_DestinationPlace" type="search" placeholder="Destination">
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-input" name="txt_date">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input id="txt_date" type="date" ng-model="data.date" placeholder="Date">
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-input" name="txt_time">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input id="txt_time" ng-controller="timeController" type="time" ng-model="model.time" placeholder="Time" formatted-time>
+                    </label>
+                </div>
+              <div class="col">
+                  
+                 <button class="button button-balanced button-block" style="margin-top:0px!important;margin-bottom:0px!important;" ng-click="saveTripInfo()">Show route</button>
+                 
+                </div>  
+                
+            </div>
+           
+            <div id="map"> </div>
+            <div class="row">
+                <div class="col" id="weatherStart"></div>
+                <div class="col" id="weatherIncrements"></div>
+                <div class="col" id="weatherEnd"></div>
+            </div>
+
+    </ion-content>
+
+</ion-view>
